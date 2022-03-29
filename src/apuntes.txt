@@ -1,0 +1,82 @@
+//////////////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+const App = () =>{
+  console.log('Hello from component index.js')
+  return(
+    <div>
+    <p>HELLO WORD</p>
+    </div>
+  )
+}
+
+
+ReactDOM.render(<App/>,  document.getElementById('root'))
+//////////////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+const App = () =>{
+  const now = new Date()
+  const a = 10
+  const b = 20
+
+  console.log('Hello from component index.js')
+  return React.createElement(
+    'div',
+    null,
+    React.createElement('p',null,'Hello word, it is:',now.toString()),
+    React.createElement('p',null,a,'+',b,'is:',a+b)
+  )
+}
+
+
+ReactDOM.render(
+  React.createElement(App,null),
+  document.getElementById('root')
+
+)
+//////////////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const Hello = (props) => {
+  return (
+    <div>
+      <p>Hello {props.name} , you are {props.age} years old.</p>
+    </div>
+  )
+}
+
+const Genero = (props) => {
+  return (
+    <div>
+      <p>You sex: {props.sex}</p>
+    </div>
+  )
+}
+
+
+const App = () => {
+  const name = 'Raul'
+  const age = 20
+  console.log(name)
+  return(
+    <div>
+      <h1>GREETINGS</h1>
+      
+      <Hello name={name} age="29"/> 
+      <Hello name="perico" age={29+22}/>
+      <Hello name="coca" age={age}/>
+      <Genero sex="homogeneo"/>
+      
+    </div>
+  )
+}
+
+
+
+ReactDOM.render(<App/>,document.getElementById('root'))
